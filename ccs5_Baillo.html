@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Coding Challenge 5
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        background-color: lightseagreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h1> Modified FLAMES </h1>
+    <button onclick="flames()">Match Names</button>
+    <h3 id="name"></h3>
+    <h4>FLAMES Result:</h4>
+    <h3 id="result"></h3>
+    <script>
+      function flames(){
+        var name1=prompt("Enter a first name:");
+        var name2=prompt("Enter a second name:");
+        document.getElementById("name").innerHTML=name1 + " and " + name2;
+        var comb=(name1+name2).match(/[A-Za-z]/gi).length;
+        var y=(comb%6);
+        var letter;
+        switch(y){
+          case 1:
+            letter="F-friends";
+            return letter;
+          case 2:
+            letter="L-lovers";
+            return letter;
+          case 3:
+            letter="A-acquaintances";
+            return letter;
+          case 4:
+            letter="M-marriage";
+            return letter;
+          case 5:
+            letter="E-enemies";
+            return letter;
+          case 0:
+            letter="S-sweethearts";
+            return letter;
+        }
+      }
+      document.getElementById("result").innerHTML=flames();
+    </script>
+  </body>
+</html>
